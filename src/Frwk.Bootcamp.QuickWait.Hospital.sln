@@ -15,6 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Domain", "2 - Domain", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infrastructure", "3 - Infrastructure", "{6F9D53D9-94BC-4B8E-BC7B-59983EDF8410}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Tests", "4 - Tests", "{63AE8416-BE7D-4B08-839C-BE51D9A0C3A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frwk.Bootcamp.QuickWait.Hospital.Tests", "Frwk.Bootcamp.QuickWait.Hospital.Tests\Frwk.Bootcamp.QuickWait.Hospital.Tests.csproj", "{17F9330C-AF97-479D-A6F7-270C1D5B5BEF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,10 @@ Global
 		{469FBDD4-EA74-470E-94BA-33CE9D85E24A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{469FBDD4-EA74-470E-94BA-33CE9D85E24A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{469FBDD4-EA74-470E-94BA-33CE9D85E24A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17F9330C-AF97-479D-A6F7-270C1D5B5BEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17F9330C-AF97-479D-A6F7-270C1D5B5BEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17F9330C-AF97-479D-A6F7-270C1D5B5BEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17F9330C-AF97-479D-A6F7-270C1D5B5BEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +49,7 @@ Global
 		{037F768E-FDC7-45B1-A2BA-D380EE33C6DA} = {327F1F6C-0B8F-401E-B682-8496478342B6}
 		{71692E7A-1A08-4E35-A5AA-FE62C4173116} = {CCEB6978-8541-46AC-A0F7-329FE190479D}
 		{469FBDD4-EA74-470E-94BA-33CE9D85E24A} = {6F9D53D9-94BC-4B8E-BC7B-59983EDF8410}
+		{17F9330C-AF97-479D-A6F7-270C1D5B5BEF} = {63AE8416-BE7D-4B08-839C-BE51D9A0C3A0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1CDC0B50-E6EF-4164-8395-6FFC1AC4B19A}
