@@ -1,11 +1,11 @@
 package com.quickwait.hospital.api.v1.controller;
 
 import java.util.List;
+import java.util.Objects;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,9 +22,12 @@ import com.quickwait.hospital.domain.service.NearestHospitalsService;
 @Validated
 public class HospitalController {
 
-	@Autowired
-	private NearestHospitalsService nearestHospitalsService;
+	private final NearestHospitalsService nearestHospitalsService;
 	
+	public HospitalController(NearestHospitalsService nearestHospitalsService) {
+		this.nearestHospitalsService = Objects.requireNonNull(nearestHospitalsService);
+	}
+
 	@GetMapping
 	public List<Hospital> getNearestHospitals(
 					@RequestParam @Min(AreaLimitsService.MIN_VALID_VALUE_LONGITUDE) 
