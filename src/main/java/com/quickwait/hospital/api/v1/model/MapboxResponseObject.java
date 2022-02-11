@@ -2,6 +2,7 @@ package com.quickwait.hospital.api.v1.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import org.modelmapper.ModelMapper;
 
@@ -18,7 +19,7 @@ public class MapboxResponseObject {
 	private List<Feature> features;
 	
 	public List<Address> convertFeaturesToAddresses(ModelMapper modelMapper) {
-		if(this.getFeatures() == null || this.getFeatures().isEmpty()) return null;
+		if(Objects.isNull(this.getFeatures()) || this.getFeatures().isEmpty()) return null;
 		
 		List<Address> addresses = new ArrayList<Address>();
 		
@@ -26,7 +27,7 @@ public class MapboxResponseObject {
 			Address address = new Address();
 			modelMapper.map(feature, address);
 			
-			if(feature.getCenter() != null && feature.getCenter().size() >= 2) {
+			if(Objects.nonNull(feature.getCenter()) && feature.getCenter().size() >= 2) {
 				address.setLongitude(feature.getCenter().get(0));
 				address.setLatitude(feature.getCenter().get(1));
 			}
@@ -38,7 +39,7 @@ public class MapboxResponseObject {
 	}
 	
 	public List<Hospital> convertFeaturesToHospitals(ModelMapper modelMapper) {
-		if(this.getFeatures() == null || this.getFeatures().isEmpty()) return null;
+		if(Objects.isNull(this.getFeatures()) || this.getFeatures().isEmpty()) return null;
 		
 		List<Hospital> hospitals = new ArrayList<Hospital>();
 
@@ -46,7 +47,7 @@ public class MapboxResponseObject {
 			Hospital hospital = new Hospital();
 			modelMapper.map(feature, hospital);
 
-			if(feature.getCenter() != null && feature.getCenter().size() >= 2) {
+			if(Objects.nonNull(feature.getCenter()) && feature.getCenter().size() >= 2) {
 				hospital.setLongitude(feature.getCenter().get(0));
 				hospital.setLatitude(feature.getCenter().get(1));
 			}
