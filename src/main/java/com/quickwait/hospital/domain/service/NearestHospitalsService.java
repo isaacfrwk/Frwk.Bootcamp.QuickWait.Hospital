@@ -1,6 +1,7 @@
 package com.quickwait.hospital.domain.service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -41,7 +42,7 @@ public class NearestHospitalsService {
 		
 		List<Hospital> hospitals = hospitalInputData.convertFeaturesToHospitals(modelMapper);
 		
-		if(hospitals == null) return null;
+		if(Objects.isNull(hospitals) || hospitals.isEmpty()) return new ArrayList<>();
 		
 		hospitals.forEach(hospital -> {
 			PathCoordinates pathCoordinates = getPathCoordinates(longitude, latitude, 
@@ -61,8 +62,7 @@ public class NearestHospitalsService {
 							Double destinyLongitude, Double destinyLatitude) {
 		String url = mapboxProperties.getHost() + "/directions/v5/mapbox/driving/"
 				+ "{originLongitude},{originLatitude};{destinyLongitude},{destinyLatitude}"
-				+ "?overview={overview}&geometries={geometries}&language={language}"
-				+ "&access_token={token}";
+				+ "?overview={overview}&geometries={geometries}&access_token={token}";
 		
 		Map<String, String> urlVariables = new HashMap<String, String>();
 		urlVariables.put("originLongitude", originLongitude.toString());
@@ -71,7 +71,6 @@ public class NearestHospitalsService {
 		urlVariables.put("destinyLatitude", destinyLatitude.toString());
 		urlVariables.put("overview", "full");
 		urlVariables.put("geometries", "geojson");
-		urlVariables.put("language", "pt-BR");
 		urlVariables.put("token", mapboxProperties.getToken());
 		
 		return restTemplate.getForObject(url, PathCoordinates.class, urlVariables);
