@@ -13,3 +13,10 @@ sentry:
   logging.minimum-event-level: info
   logging.minimum-breadcrumb-level: debug
   traces-sample-rate: 0.2
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"
