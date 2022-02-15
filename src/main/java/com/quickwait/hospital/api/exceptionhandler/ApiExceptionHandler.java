@@ -119,7 +119,7 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 	
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<Object> handleUncaught(Exception ex, WebRequest request) {
-		HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;		
+		HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
 		ProblemType problemType = ProblemType.SYSTEM_ERROR;
 		String detail = MSG_ERROR_GENERIC_USER;
 
