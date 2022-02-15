@@ -36,6 +36,7 @@ public class HospitalController {
 					@RequestParam @Min(AreaLimitsService.MIN_VALID_VALUE_LATITUDE) 
 						@Max(AreaLimitsService.MAX_VALID_VALUE_LATITUDE) @NotNull Double latitude, 
 					@RequestParam @Min(AreaLimitsService.MIN_VALID_VALUE_RADIX) @NotNull Double radix) {
+		
 		return nearestHospitalsService.getNearestHospitals(longitude, latitude, radix);
 	}
 	

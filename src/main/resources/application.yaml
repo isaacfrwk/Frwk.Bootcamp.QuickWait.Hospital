@@ -1,0 +1,22 @@
+springdoc:
+  api-docs:
+    path: /api-docs
+
+mapbox:
+  host: https://api.mapbox.com
+  token: replace_by_your_mapbox_token
+  hospitals-limit: 10
+  
+sentry:
+  dsn: replace_by_your_sentry_dsn
+  exception-resolver-order: -2147483647
+  logging.minimum-event-level: info
+  logging.minimum-breadcrumb-level: debug
+  traces-sample-rate: 0.2
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"
