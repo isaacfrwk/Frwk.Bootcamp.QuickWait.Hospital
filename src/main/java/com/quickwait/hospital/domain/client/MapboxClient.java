@@ -27,12 +27,12 @@ public class MapboxClient {
 	public MapboxResponseObject getAddressesInputData(String addressName) {
 		String urlTemplate = mapboxProperties.getHost() + "/geocoding/v5/mapbox.places/{address}.json"
 				+ "?types={types}&access_token={token}";
-
+		
 		Map<String, String> urlVariables = new HashMap<String, String>();
 		urlVariables.put("address", addressName);
 		urlVariables.put("types", "address");
 		urlVariables.put("token", mapboxProperties.getToken());
-
+		
 		return restTemplate.getForObject(urlTemplate, MapboxResponseObject.class, urlVariables);
 	}
 
@@ -58,7 +58,7 @@ public class MapboxClient {
 		String url = mapboxProperties.getHost()
 				+ "/geocoding/v5/mapbox.places/hospital.json?types={types}&limit={limit}"
 				+ "&bbox={minLongitude},{minLatitude},{maxLongitude},{maxLatitude}&access_token={token}";
-
+		
 		Map<String, String> urlVariables = new HashMap<String, String>();
 		urlVariables.put("types", "poi");
 		urlVariables.put("limit", mapboxProperties.getHospitalsLimit());
