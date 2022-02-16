@@ -1,0 +1,11 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: hospital-api
+  profiles:
+    active:
+    - dev
+  cloud:
+    config:
+      uri: http://springconfigserver:8071
