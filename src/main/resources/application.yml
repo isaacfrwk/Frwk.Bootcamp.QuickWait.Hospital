@@ -6,6 +6,5 @@ spring:
   profiles:
     active:
     - dev
-  cloud:
-    config:
-      uri: http://springconfigserver:8071
+  config:
+    import: "configserver:http://springconfigserver:8071"
