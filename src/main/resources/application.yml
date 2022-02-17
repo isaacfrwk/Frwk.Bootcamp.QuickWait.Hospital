@@ -1,0 +1,10 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: hospital-api
+  profiles:
+    active:
+    - dev
+  config:
+    import: "configserver:http://springconfigserver:8071"
