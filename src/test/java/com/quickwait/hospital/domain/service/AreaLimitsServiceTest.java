@@ -20,8 +20,8 @@ public class AreaLimitsServiceTest {
 		Map<String, Double> areaLimits = areaLimitsService.calcLatitudeAndLongitudeLimits(-44.63615864397482, -20.539661678553465, 5.0); 
 		
 		assertEquals(-20.5848, areaLimits.get(AreaLimitsService.MIN_LATITUDE), 0.01);
-		assertEquals(-44.2588, areaLimits.get(AreaLimitsService.MIN_LONGITUDE), 0.01);
+		assertEquals(-45.0135, areaLimits.get(AreaLimitsService.MIN_LONGITUDE), 0.01);
 		assertEquals(-20.4944, areaLimits.get(AreaLimitsService.MAX_LATITUDE), 0.01);
-		assertEquals(-45.0135, areaLimits.get(AreaLimitsService.MAX_LONGITUDE), 0.01);
+		assertEquals(-44.2588, areaLimits.get(AreaLimitsService.MAX_LONGITUDE), 0.01);
 	}
 }

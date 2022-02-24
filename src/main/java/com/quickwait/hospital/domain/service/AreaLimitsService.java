@@ -79,6 +79,6 @@ public class AreaLimitsService {
 	}
 	
 	private double getOneDegreeOfLongitudeInKm(double latitude) {
-		return 111.320 * Math.cos(latitude);
+		return Math.abs(111.320 * Math.cos(latitude));
 	}
 }
