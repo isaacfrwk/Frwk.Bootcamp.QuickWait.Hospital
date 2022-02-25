@@ -19,9 +19,9 @@ public class MapboxResponseObject {
 	private List<Feature> features;
 	
 	public List<Address> convertFeaturesToAddresses(ModelMapper modelMapper) {
-		if(Objects.isNull(this.getFeatures()) || this.getFeatures().isEmpty()) return null;
+		if(Objects.isNull(this.getFeatures()) || this.getFeatures().isEmpty()) return new ArrayList<>();
 		
-		List<Address> addresses = new ArrayList<Address>();
+		List<Address> addresses = new ArrayList<>();
 		
 		this.getFeatures().forEach(feature -> {
 			Address address = new Address();
@@ -39,9 +39,9 @@ public class MapboxResponseObject {
 	}
 	
 	public List<Hospital> convertFeaturesToHospitals(ModelMapper modelMapper) {
-		if(Objects.isNull(this.getFeatures()) || this.getFeatures().isEmpty()) return null;
+		if(Objects.isNull(this.getFeatures()) || this.getFeatures().isEmpty()) return new ArrayList<>();
 		
-		List<Hospital> hospitals = new ArrayList<Hospital>();
+		List<Hospital> hospitals = new ArrayList<>();
 
 		this.getFeatures().forEach(feature -> {
 			Hospital hospital = new Hospital();

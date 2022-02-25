@@ -22,7 +22,7 @@ public class AreaLimitsService {
 	private static final Double ONE_DEGREE_OF_LATITUDE_IN_KM = 110.574;
 	
 	public Map<String, Double> calcLatitudeAndLongitudeLimits(double longitude, double latitude, double radix) {
-		Map<String, Double> limits = new HashMap<String, Double>();
+		Map<String, Double> limits = new HashMap<>();
 		
 		limits.put(MIN_LONGITUDE, getMinLongitude(longitude, latitude, radix));
 		limits.put(MIN_LATITUDE, getMinLatitude(latitude, radix));
