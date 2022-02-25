@@ -165,9 +165,11 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 
 		ProblemType problemType = ProblemType.INVALID_PARAMETER;
 
+		String requiredTypeSimpleName = ex.getRequiredType() != null ? ex.getRequiredType().getSimpleName() : "";
+
 		String detail = String.format("The URL parameter '%s' received the value '%s', "
 				+ "which is of an invalid type. Correct and enter a value compatible with the type %s.",
-				ex.getName(), ex.getValue(), ex.getRequiredType().getSimpleName());
+				ex.getName(), ex.getValue(), requiredTypeSimpleName);
 
 		Problem problem = createProblemBuilder(status, problemType, detail)
 				.userMessage(MSG_ERROR_GENERIC_USER)
@@ -254,7 +256,6 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 	}
 	
 	private Problem.ProblemBuilder createProblemBuilder(HttpStatus status, ProblemType problemType, String detail) {
-		
 		return Problem.builder()
 			.timestamp(OffsetDateTime.now())
 			.status(status.value())
@@ -264,7 +265,7 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 	
 	private String joinPath(List<Reference> references) {
 		return references.stream()
-			.map(ref -> ref.getFieldName())
+			.map(Reference::getFieldName)
 			.collect(Collectors.joining("."));
 	}
 }

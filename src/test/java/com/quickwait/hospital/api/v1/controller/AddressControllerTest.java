@@ -16,13 +16,13 @@ import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-public class AddressControllerTest {
+class AddressControllerTest {
 
 	@LocalServerPort
 	private int port;
 	
 	@Test
-	public void should_return_five_addresses() {
+	void should_return_five_addresses() {
 		RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
 		
 		ExtractableResponse<Response> extract = RestAssured.given()
@@ -42,7 +42,7 @@ public class AddressControllerTest {
 	}
 	
 	@Test
-	public void should_return_bad_request_due_blank_parameter() {
+	void should_return_bad_request_due_blank_parameter() {
 		RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
 		
 		RestAssured.given()

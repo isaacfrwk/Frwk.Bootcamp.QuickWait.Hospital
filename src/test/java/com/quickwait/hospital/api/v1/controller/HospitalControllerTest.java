@@ -18,7 +18,7 @@ import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-public class HospitalControllerTest {
+class HospitalControllerTest {
 
 	@LocalServerPort
 	private int port;
@@ -27,7 +27,7 @@ public class HospitalControllerTest {
 	private Integer hospitalsLimit;
 	
 	@Test
-	public void should_return_200_ok() {
+	void should_return_200_ok() {
 		RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
 		
 		RestAssured.given()
@@ -45,7 +45,7 @@ public class HospitalControllerTest {
 	}
 	
 	@Test
-	public void should_return_path_coordinates() {
+	void should_return_path_coordinates() {
 		RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
 		
 		ExtractableResponse<Response> response = RestAssured.given()
