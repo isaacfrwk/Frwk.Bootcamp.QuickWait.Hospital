@@ -10,7 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 
-import com.quickwait.hospital.api.v1.model.PathCoordinates;
+import com.quickwait.hospital.domain.client.mapboxresponses.PathCoordinates;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;

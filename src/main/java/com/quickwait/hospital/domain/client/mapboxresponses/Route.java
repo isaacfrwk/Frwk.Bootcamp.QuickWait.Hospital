@@ -1,4 +1,4 @@
-package com.quickwait.hospital.api.v1.model;
+package com.quickwait.hospital.domain.client.mapboxresponses;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 
