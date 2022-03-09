@@ -7,9 +7,9 @@ import java.util.Objects;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.quickwait.hospital.api.v1.model.MapboxResponseObject;
-import com.quickwait.hospital.api.v1.model.PathCoordinates;
 import com.quickwait.hospital.core.mapbox.MapboxProperties;
+import com.quickwait.hospital.domain.client.mapboxresponses.MapboxResponseObject;
+import com.quickwait.hospital.domain.client.mapboxresponses.PathCoordinates;
 import com.quickwait.hospital.domain.service.AreaLimitsService;
 
 @Service

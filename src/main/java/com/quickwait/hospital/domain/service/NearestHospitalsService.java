@@ -9,9 +9,9 @@ import java.util.Objects;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
-import com.quickwait.hospital.api.v1.model.MapboxResponseObject;
-import com.quickwait.hospital.api.v1.model.PathCoordinates;
 import com.quickwait.hospital.domain.client.MapboxClient;
+import com.quickwait.hospital.domain.client.mapboxresponses.MapboxResponseObject;
+import com.quickwait.hospital.domain.client.mapboxresponses.PathCoordinates;
 import com.quickwait.hospital.domain.model.Hospital;
 
 @Service

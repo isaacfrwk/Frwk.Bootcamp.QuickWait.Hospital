@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.quickwait.hospital.api.v1.model.PathCoordinates;
+import com.quickwait.hospital.domain.client.mapboxresponses.PathCoordinates;
 import com.quickwait.hospital.domain.model.Hospital;
 import com.quickwait.hospital.domain.service.AreaLimitsService;
 import com.quickwait.hospital.domain.service.NearestHospitalsService;

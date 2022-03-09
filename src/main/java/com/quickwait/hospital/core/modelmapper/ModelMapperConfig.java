@@ -4,7 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.quickwait.hospital.api.v1.model.Feature;
+import com.quickwait.hospital.domain.client.mapboxresponses.Feature;
 import com.quickwait.hospital.domain.model.Address;
 import com.quickwait.hospital.domain.model.Hospital;
 
